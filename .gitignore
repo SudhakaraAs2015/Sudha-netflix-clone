@@ -1,0 +1,38 @@
+.history
+
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor config files
+.vscode/
+.idea/
+
+# Optional: Build output
+dist/
+build/
+
+# Optional: Coverage directory
+coverage/
+
+# Optional: Dependency directory for global packages
+npm-global/
+
+# Optional: Testing
+test/
+
+# Optional: Ignore production folder if present
+prod/
