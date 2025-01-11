@@ -6,10 +6,10 @@ const SignupPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignUp =(e)=>{
-e.preventDefault();
-console.log(email,username,password);
-  }
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    console.log(email, username, password);
+  };
   return (
     <>
       <div className="h-screen w-full hero-bg">
@@ -35,7 +35,9 @@ console.log(email,username,password);
                   type="email"
                   className="w-full px-3 py-2 mt-1 border border-gray-700 rounded-md bg-transparent text-white focus:outline-none focus:ring"
                   placeholder="you@example.com"
-                  id="email" value={email} onChange={(e)=>setEmail(e.target.value)}
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
@@ -50,7 +52,9 @@ console.log(email,username,password);
                   type="username"
                   className="w-full px-3 py-2 mt-1 border border-gray-700 rounded-md bg-transparent text-white focus:outline-none focus:ring"
                   placeholder="jhondoe"
-                  id="username" value={username} onChange={(e)=>setUsername(e.target.value)}
+                  id="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
 
@@ -65,7 +69,9 @@ console.log(email,username,password);
                   type="password"
                   className="w-full px-3 py-2 mt-1 border border-gray-700 rounded-md bg-transparent text-white focus:outline-none focus:ring"
                   placeholder="Password"
-                  id="password" value={password} onChange={(e)=>setPassword(e.target.value)}
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <button
@@ -79,7 +85,7 @@ console.log(email,username,password);
             <div className="text-center text-gray-400">
               Already a member?{" "}
               <Link to={"/login"} className="text-red-500 hover:underline">
-                Sign in
+                Sign In
               </Link>
             </div>
           </div>
