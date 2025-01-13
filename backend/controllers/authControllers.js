@@ -8,7 +8,7 @@ const signup = async (req, res) => {
     const { email, username, password } = req.body;
 
     // Check if all fields are provided
-    if (!email || !username || !password) {
+    if (!email || !password || !username) {
       return res
         .status(400)
         .json({ success: false, message: "Please fill all the fields" });
@@ -29,7 +29,7 @@ const signup = async (req, res) => {
     }
 
     // Check if email already exists
-    const existingUserByEmail = await User.findOne({ email });
+    const existingUserByEmail = await User.findOne({ email:email });
     if (existingUserByEmail) {
       return res
         .status(400)
@@ -37,7 +37,7 @@ const signup = async (req, res) => {
     }
 
     // Check if username already exists
-    const existingUserByUsername = await User.findOne({ username });
+    const existingUserByUsername = await User.findOne({ username : username });
     if (existingUserByUsername) {
       return res
         .status(400)
@@ -91,7 +91,7 @@ const login = async (req, res) => {
         .status(400)
         .send({ success: false, message: "Please fill all the fields" });
     }
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email : email });
     if (!user) {
       return res
         .status(404)
@@ -129,4 +129,16 @@ const logout = async (req, res) => {
   }
 };
 
-export { signup, login, logout };
+
+const authCheck = async (req, res) =>{
+  try {
+
+		res.status(200).json({ success: true, user: req.user });
+	} catch (error) {
+		console.log("Error in authCheck controller", error.message);
+		res.status(500).json({ success: false, message: "Internal server error" });
+	}
+}
+
+
+export { signup, login, logout, authCheck};

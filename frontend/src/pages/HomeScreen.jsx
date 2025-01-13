@@ -1,8 +1,13 @@
+import Navbar from "../components/Navbar";
 
 const HomeScreen = () => {
   return (
-    <div>HomeScreen</div>
-  )
-}
+    <>
+      <div className="relative h-screen text-white">
+        <Navbar/>
+      </div>
+    </>
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;

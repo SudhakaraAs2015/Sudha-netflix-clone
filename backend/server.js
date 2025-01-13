@@ -22,6 +22,8 @@ app.use('/api/v1/auth',authRoutes);
 app.use('/api/v1/movie',protectRoutes,movieRoutes);
 app.use('/api/v1/tv',protectRoutes,tvRoutes);
 app.use('/api/v1/search',protectRoutes,searchRoutes);
+
+
 app.listen(PORT, ()=>{
     console.log(`Sudha's Server is Running on Port ${PORT}`);
 });
