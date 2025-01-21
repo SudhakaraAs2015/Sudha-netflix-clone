@@ -38,7 +38,7 @@ export async function searchMovie(req, res) {
     if (response.results.length === 0) {
       return res.status(404).send(null);
     }
-
+      
     await User.findByIdAndUpdate(req.user._id, {
       $push: {
         searchHistory: {
